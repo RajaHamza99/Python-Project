@@ -63,8 +63,39 @@ class SongsForm(FlaskForm):
             ]
     )
     
-    submit = SubmitField('Post Content')
+    submit = SubmitField('Add song')
 
+
+class PlaylistForm(FlaskForm):
+    title = StringField('Title',
+            validators = [
+                DataRequired(),
+                Length(min=4, max=100)
+            ]
+    )
+
+    content1 = StringField('Song 1: ',
+            validators = [
+                DataRequired(),
+                Length(min=4, max=100)
+            ]
+    )
+
+    content2 = StringField('Song 2: ',
+            validators=[
+                DataRequired(),
+                Length(min=4, max=100)
+            ]
+    )
+
+    content3 = StringField('Song 3: ',
+            validators = [
+                DataRequired(),
+                Length(min=4, max=100)
+            ]
+    )
+
+    submit = SubmitField('Post Content')
 class RegistrationForm(FlaskForm):
     first_name = StringField('First Name',
                     validators=[

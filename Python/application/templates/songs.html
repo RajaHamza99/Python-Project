@@ -30,5 +30,18 @@
 		    {{ form.submit }}
 		</div>
 	</form>
+	<h1>Your Songs</h1>
+{% for songs in songs %}
+    <div>
+        <h3>{{ songs.title }}</h3>
+	<p>{{ songs.artist }} </p>
+    </div>
+                </div>
+        </form>
+        <form action="{{ url_for('song_delete', song_id=songs.id) }}">
+                <button type="submit">Delete this song</button>
+        </form>
+    </div>
 </div>
+{% endfor %}
 {% endblock body_content %}

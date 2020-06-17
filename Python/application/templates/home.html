@@ -5,12 +5,6 @@
 {% for playlists in playlists %}
     <div>
         <h3>{{ playlists.title }}</h3>
-        <p>{{ playlists.content1 }}</p>
-	<p>{{ playlists.content2 }}</p>
-	<p>{{ playlists.content3 }} </p>
-    </div>
-                </div>
-        </form>
         <form action="{{ url_for('playlist_delete', playlists_id=playlists.id) }}">
                 <button type="submit">Delete this playlist</button>
         </form>

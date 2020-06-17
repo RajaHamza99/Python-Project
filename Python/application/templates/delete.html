@@ -1,15 +1,12 @@
 {% extends 'layouts.html' %}
 {% block body_content %}
-<h1>Your Playlists</h1>
-{% for playlists in playlists %}
+<h1>Your Songs</h1>
+{% for songs in songs %}
     <div>
         <h3>{{ songs.title }}</h3>
-    </div>
-                </div>
-        </form>
-        <form action="{{ url_for('song_delete', songs_id=songs.id) }}">
                 <button type="submit">Delete this song</button>
-        </form>
     </div>
+        </form>
 {% endfor %}
 {% endblock %}
+~                             
