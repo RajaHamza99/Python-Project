@@ -1,7 +1,7 @@
 from flask import render_template, url_for, redirect, request
 from application import app, db, bcrypt
-from application.models import Playlists, Users
-from application.forms import PlaylistForm, RegistrationForm, LoginForm, UpdateAccountForm, UpdatePlaylistForm
+from application.models import Playlists, Users, Songs
+from application.forms import  RegistrationForm, LoginForm, UpdateAccountForm, UpdatePlaylistForm, SongsForm
 from flask_login import login_user, current_user, logout_user, login_required
 
 
@@ -72,6 +72,15 @@ def playlist_delete(playlists_id):
     return redirect(url_for('home'))
 
 
+
+@app.route('/songs/delete/<int:songs_id>', methods=['GET', 'POST'])
+@login_required
+def song_delete(songs_id):
+    song = Songs.query.filter_by(id=songs_id).first()
+    db.session.delete(song)
+    db.session.commit()
+    return redirect(url_for('home'))
+
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if current_user.is_authenticated:
@@ -93,22 +102,20 @@ def register():
         return redirect(url_for('playlist'))
     return render_template('register.html', title='Register', form=form )
 
-@app.route('/playlist', methods=['GET', 'POST'])
+@app.route('/songs', methods=['GET', 'POST'])
 @login_required
-def playlist():
-    form = PlaylistForm()
+def songs():
+    form = SongsForm()
     if form.validate_on_submit():
-        new_playlist = Playlists(
-            title=form.title.data,
-            content1=form.content1.data,
-            content2=form.content2.data,
-            content3=form.content3.data,
-            author=current_user
+        new_song = Songs(
+                title=form.song_name.data,
+                artist=form.song_artist.data,
         )
-        db.session.add(new_playlist)
+
+        db.session.add(new_song)        
         db.session.commit()
-        return redirect(url_for('home'))
-    return render_template('playlist.html', title='Playlist', form=form)
+        return redirect(url_for('songs'))
+    return render_template('songs.html', title='Songs', form=form)
 
 
 @app.route('/update', methods=['GET', 'POST'])

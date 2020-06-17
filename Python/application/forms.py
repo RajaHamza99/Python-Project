@@ -1,7 +1,7 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, PasswordField, BooleanField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
-from application.models import Users, Playlists
+from application.models import Users, Playlists, Songs
 from flask_login import current_user
 
 
@@ -37,53 +37,32 @@ class UpdatePlaylistForm(FlaskForm):
                 DataRequired(),
                 Length(min=4, max=100)
             ])
-    content1 = StringField('Song 1:',
+    song_title = StringField('Song Title: ',
             validators=[
                 DataRequired(),
                 Length(min=4, max=100)
             ])
-    content2 = StringField('Song 2:',
+    song_artist = StringField('Song Arist: ',
             validators=[
                 DataRequired(),
                 Length(min=4, max=100)
-            ])
-    submit = SubmitField('Update Post')
 
-    content3 = StringField('Song 3: ',
-            validators=[
-                DataRequired(),
-                Length(min=4, max=100)
-            ])
-
-class PlaylistForm(FlaskForm):
-    title = StringField('Title',
+                ])
+class SongsForm(FlaskForm):
+    song_name = StringField('Song name: ',
             validators = [
                 DataRequired(),
                 Length(min=4, max=100)
             ]
     )
 
-    content1 = StringField('Song 1: ',
-            validators = [
-                DataRequired(),
-                Length(min=4, max=100)
-            ]
-    )
-
-    content2 = StringField('Song 2: ',
+    song_artist = StringField('Song Artist: ',
             validators=[
                 DataRequired(),
                 Length(min=4, max=100)
             ]
     )
     
-    content3 = StringField('Song 3: ',
-            validators = [
-                DataRequired(),
-                Length(min=4, max=100)
-            ]
-    )
-
     submit = SubmitField('Post Content')
 
 class RegistrationForm(FlaskForm):
