@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, PasswordField, BooleanField
+from wtforms import StringField, SubmitField, PasswordField, BooleanField, SelectField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
 from application.models import Users, Playlists, Songs
 from flask_login import current_user
@@ -37,17 +37,14 @@ class UpdatePlaylistForm(FlaskForm):
                 DataRequired(),
                 Length(min=4, max=100)
             ])
-    song_title = StringField('Song Title: ',
-            validators=[
-                DataRequired(),
-                Length(min=4, max=100)
-            ])
-    song_artist = StringField('Song Arist: ',
-            validators=[
-                DataRequired(),
-                Length(min=4, max=100)
+    content1 = SelectField(u'Song 1', coerce=int, choices=[])
+    content2 = SelectField(u'Song 2', coerce=int, choices=[])
+    content3 = SelectField(u'Song 3', coerce=int, choices=[])
 
-                ])
+    submit = SubmitField('Update')
+            
+
+            
 class SongsForm(FlaskForm):
     song_name = StringField('Song name: ',
             validators = [
@@ -73,29 +70,13 @@ class PlaylistForm(FlaskForm):
                 Length(min=4, max=100)
             ]
     )
-
-    content1 = StringField('Song 1: ',
-            validators = [
-                DataRequired(),
-                Length(min=4, max=100)
-            ]
-    )
-
-    content2 = StringField('Song 2: ',
-            validators=[
-                DataRequired(),
-                Length(min=4, max=100)
-            ]
-    )
-
-    content3 = StringField('Song 3: ',
-            validators = [
-                DataRequired(),
-                Length(min=4, max=100)
-            ]
-    )
+    content1 = SelectField(u'Song 1', coerce=int, choices=[])
+    content2 = SelectField(u'Song 2', coerce=int, choices=[])
+    content3 = SelectField(u'Song 3', coerce=int, choices=[])
 
     submit = SubmitField('Post Content')
+
+
 class RegistrationForm(FlaskForm):
     first_name = StringField('First Name',
                     validators=[

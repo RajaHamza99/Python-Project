@@ -3,6 +3,7 @@
 <div class="form">
 	<form method="POST" action="">
 		{{ form.hidden_tag() }}
+		<h2>Add Songs</h2>
 		<div class="form-group">
 			{{ form.song_name.label }}
 			{{ form.song_name }}
@@ -30,7 +31,7 @@
 		    {{ form.submit }}
 		</div>
 	</form>
-	<h1>Your Songs</h1>
+	<h2>Your Songs</h2>
 {% for songs in songs %}
     <div>
         <h3>{{ songs.title }}</h3>
