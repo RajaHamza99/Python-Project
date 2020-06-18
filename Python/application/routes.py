@@ -141,20 +141,30 @@ def song_delete(song_id):
     db.session.commit()
     return redirect(url_for('add_songs'))
 
-@app.route('/update', methods=['GET', 'POST'])
+@app.route('/update/playlist/<int:playlist_id>', methods=['GET', 'POST'])
 @login_required
-def update():
+def playlist_update(playlist_id):
     form = UpdatePlaylistForm()
+    playlist = Playlists.query.filter_by(id=playlist_id)
+    all_songs = Songs.query.all()
+    song_choices = []
+    for song in all_songs:
+        song_choices.append((song.id, song.title))
+    form.content1.choices=song_choices
+    form.content2.choices=song_choices
+    form.content3.choices=song_choices
     if form.validate_on_submit():
-        playlists.title=form.title.data
-        new_playlist = Playlists(
-                content1=form.content1.data,
-                content2=form.content2.data,
-                content3=form.content3.data
-                )
-        db.session.add(new_playlist)
+        updated_playlist = Playlists(
+            title=playlist.title,
+            songs_id=form.content1.data,
+            songs_id2=form.content2.data,
+            songs_id3=form.content3.data,
+            author=current_user
+            )
+
+        db.session.add(updated_playlist)
         db.session.commit()
-        return redirect(url_for('update'))
+        return redirect(url_for('home'))
     return render_template('update.html', title='Update', form=form)
 
 
