@@ -1,7 +1,7 @@
 # Python-Project
 
 ## Contents
-* [Brief](#brief)
+* [Project Objective](#Project Objective)
    * [Additional Requirements](#additional-requirements)
    * [My Approach](#my-approach)
 * [Architecture](#architecture)
@@ -14,3 +14,5 @@
 * [Known Issues](#known-issues)
 * [Future Improvements](#future-improvements)
 * [Authors](#authors)
+
+## Project Objective
