@@ -49,6 +49,4 @@ A user is able to update their playlists, and change the songs within them. They
 A user is able to delete both their playlists and songs. They can also delete their account which will delete any playlists and songs created by them.
 
 ## Database Structure (ERD)
-![GitHub Logo](C:\Users\hamza\OneDrive\Desktop)
-Format: ![Alt Text](url)
-  
+![First ERD](https://theredshift.org/index.php/s/8MenBfWEbLHOPwz)
