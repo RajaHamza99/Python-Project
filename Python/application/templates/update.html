@@ -38,11 +38,13 @@
                         {% endif %}
                 </div>
 		<br>
-                <div class="form-group">
+		<form action="{{url_for('playlist_update', playlist_id=playlist_id) }}">
+                <button type="submit">Update playlist</button>
+<!--		<div class="form-group">
                     {{ form.submit }}
 		</div>
 		</div><b>
-                
+-->            
         </form> 
     </div>
 

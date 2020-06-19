@@ -145,7 +145,7 @@ def song_delete(song_id):
 @login_required
 def playlist_update(playlist_id):
     form = UpdatePlaylistForm()
-    playlist = Playlists.query.filter_by(id=playlist_id)
+    playlist = Playlists.query.filter_by(id=playlist_id).first()
     all_songs = Songs.query.all()
     song_choices = []
     for song in all_songs:
@@ -154,18 +154,12 @@ def playlist_update(playlist_id):
     form.content2.choices=song_choices
     form.content3.choices=song_choices
     if form.validate_on_submit():
-        updated_playlist = Playlists(
-            title=playlist.title,
-            songs_id=form.content1.data,
-            songs_id2=form.content2.data,
-            songs_id3=form.content3.data,
-            author=current_user
-            )
-
-        db.session.add(updated_playlist)
+        playlist.songs_id=form.content1.data
+        playlist.songs_id2=form.content2.data
+        playlist.songs_id3=form.content3.data
         db.session.commit()
         return redirect(url_for('home'))
-    return render_template('update.html', title='Update', form=form)
+    return render_template('update.html', title='Update', form=form, playlist_id=playlist_id)
 
 
 @app.route('/logout')

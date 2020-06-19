@@ -32,11 +32,6 @@ class UpdateAccountForm(FlaskForm):
                 raise ValidationError('Email already in use')
 
 class UpdatePlaylistForm(FlaskForm):
-    title = StringField('Title',
-            validators=[
-                DataRequired(),
-                Length(min=4, max=100)
-            ])
     content1 = SelectField(u'Song 1', coerce=int, choices=[])
     content2 = SelectField(u'Song 2', coerce=int, choices=[])
     content3 = SelectField(u'Song 3', coerce=int, choices=[])
