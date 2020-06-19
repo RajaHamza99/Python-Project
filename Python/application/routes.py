@@ -114,7 +114,7 @@ def register():
         db.session.add(user)
         db.session.commit()
 
-        return redirect(url_for('playlist'))
+        return redirect(url_for('/songs'))
     return render_template('register.html', title='Register', form=form )
 
 @app.route('/songs', methods=['GET', 'POST'])
