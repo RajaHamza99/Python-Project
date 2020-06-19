@@ -56,3 +56,26 @@ This diagram is the initial entity relationship diagram I created to show the pl
 ### Final ERD
 However, I simplified the application and relationship. This was my final ERD displaying the actual relationship.  
 ![Diagram that shows final, implemented ERD](https://theredshift.org/index.php/s/i6nLITYi5fgYk7u/download)  
+
+
+
+
+
+## Application Front-End Design  
+Here I have included some screenshots displaying the different pages of the application. Although the design is very simple, it is functional.
+
+##Current Issues
+Right now, there are some issues with the application. These are as follows:  
+<ul>
+  <li>A user cannot delete a song if that song exists in a playlist.</li>
+  <li>When trying to log in, if the information is incorrect, it does not notify the user, but instead just reloads the page.</li>
+  <li>To create a playlist, there have to be a minimum of 3 songs. This means a playlist can have a miniumum of 3 songs instead of having 2 empty fields.</li>
+</ul>
+
+## Improvements
+Outside of fixing the current issues, I would like to make improvements to the application. These include:  
+<ul>
+  <li>Create a association table to have a many to many relationship between playlists and songs.</li>
+  <li>Allow a user to tag other users to recommend a playlist to them.</li>
+  <li>Re-design the application to be much more visually appealing.</li>
+  <li>Include more information about songs, potentially recommending playlists with similar music to their own.</li>
