@@ -15,3 +15,7 @@
 </ul>
 
 ## Project Objective  
+The project objective was as follows:
+"To create a CRUD application with utilisation of supporting tools,
+methodologies and technologies that encapsulate all core modules
+covered during training."
