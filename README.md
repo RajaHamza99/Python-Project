@@ -49,4 +49,10 @@ A user is able to update their playlists, and change the songs within them. They
 A user is able to delete both their playlists and songs. They can also delete their account which will delete any playlists and songs created by them.
 
 ## Database Structure (ERD)
-![First ERD](https://theredshift.org/index.php/s/8MenBfWEbLHOPwz/download)
+### First ERD  
+This diagram is the initial entity relationship diagram I created to show the planned structure of the database.
+![Diagram that shows initial ERD](https://theredshift.org/index.php/s/8MenBfWEbLHOPwz/download)  
+
+### Final ERD
+However, I simplified the application and relationship. This was my final ERD displaying the actual relationship.  
+![Diagram that shows final, implemented ERD](https://theredshift.org/index.php/s/i6nLITYi5fgYk7u/download)  
