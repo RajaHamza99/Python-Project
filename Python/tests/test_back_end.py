@@ -59,3 +59,21 @@ class TestViews(TestBase):
         response = self.client.get(url_for('home'))
         self.assertEqual(response.status_code, 200)
 
+class TestPlaylist(TestBase):
+
+    def test_add_new_playlist(self):
+        """
+        Test that when I add a new post, I am redirected to the homepage with the new post visible
+        """
+        with self.client:
+            response = self.client.playlist(
+                '/playlist',
+                data=dict(
+                    title="Test Title",
+                    content1="Test Content",
+                    content2="test 2",
+                    content3="test 3",
+                ),
+                follow_redirects=True
+            )
+            self.assertIn(b'Test Title', response.data)
