@@ -64,7 +64,7 @@ However, I simplified the application and relationship. This was my final ERD di
 ## Application Front-End Design  
 Here I have included some screenshots displaying the different pages of the application. Although the design is very simple, it is functional.
 
-##Current Issues
+## Current Issues
 Right now, there are some issues with the application. These are as follows:  
 <ul>
   <li>A user cannot delete a song if that song exists in a playlist.</li>
