@@ -10,6 +10,8 @@
 	<p>{{playlists.three.title}} </p>
 	<form action="{{url_for('playlist_update', playlist_id=playlists.id) }}">
 		<button type="submit">Update playlist</button>
+	</form>
+	<br>
         <form action="{{ url_for('playlist_delete', playlists_id=playlists.id) }}">
                 <button type="submit">Delete this playlist</button>
         </form>
