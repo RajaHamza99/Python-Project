@@ -1,7 +1,7 @@
 # Python-Project
 
 ## Contents
-* [Project Objective](#Project Objective)
+
 Project Objective
 Scope
 App Overview
@@ -10,6 +10,7 @@ CI Pipeline
 Trello Board
 App Design
 Current Issues
+Testing
 Improvements
 
-## Project Objective
+# Project Objective
