@@ -2,15 +2,15 @@
 
 ## Contents
 
-Project Objective
-Scope
-App Overview
-Database Structure
-CI Pipeline
-Trello Board
-App Design
-Current Issues
-Testing
-Improvements
+Project Objective  
+Scope  
+App Overview  
+Database Structure  
+CI Pipeline  
+Trello Board  
+App Design  
+Current Issues  
+Testing  
+Improvements  
 
-# Project Objective
+## Project Objective  
