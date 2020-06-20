@@ -58,7 +58,7 @@ However, I simplified the application and relationship. This was my final ERD di
 ![Diagram that shows final, implemented ERD](https://theredshift.org/index.php/s/i6nLITYi5fgYk7u/download)  
 
 
-
+![Diagram that shows initial ERD](https://drive.google.com/file/d/1irgi0uoN4hOzYhS9CedWT0mf3NrbUTDY/view?usp=sharing)  
 
 
 ## Application Front-End Design  
