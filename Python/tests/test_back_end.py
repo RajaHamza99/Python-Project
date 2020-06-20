@@ -172,40 +172,6 @@ class TestPlaylist(TestBase):
 
 
 
-#class TestSong(TestBase):
- #   def test_song(self):
-  #      """
-   #     test a user can create songs
-    #    """
-     #   with self.client:
-      #      logging_in(self)
-       #     response = self.client.post(
-        #            '/songs',
-         #           data=dict(
-          #              title = "test song title",
-           #             artist = "test artist",
-            #            ),
-             #       follow_redirects=True
-              #      )
-            #return response
-        #self.assertIn(b'test song title', response.data)
-        #self.assertIn(b'test artist', response.data)
-
-"""class TestSongs(TestBase):
-    def test_add_song(self):
-        with self.client:
-            response = self.client.post(
-                    '/login',
-                    data=dict(
-                        email="admin@admin.com",
-                        password="admin2016"
-                        ),
-                    follow_redirects=True
-                    )
-            self.assertEqual(response.status_code, 200)
-            responsetwo = self.client.post(url_for('playlist', playlists_id=1), data=dict(title="test song", artist="test artist"))
-            self.assertIn(b'test song', responsetwo.data)
-"""
 class TestUpdate(TestBase):
     def test_account(self):
         """
