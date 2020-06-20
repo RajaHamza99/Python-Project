@@ -24,8 +24,8 @@ song_artist="test artist"
 class TestBase(LiveServerTestCase):
 
     def create_app(self):
-        app.config['SQLALCHEMY_DATABASE_URI'] = str(getenv('TEST_DATABASE'))
-        app.config['SECRET_KEY'] = getenv('SKEY')
+        app.config['SQLALCHEMY_DATABASE_URI'] = str(getenv('TEST_DB_URI'))
+        app.config['SECRET_KEY'] = getenv('TEST_SECRET_KEY')
         return app
 
     def setUp(self):
