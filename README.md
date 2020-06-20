@@ -34,7 +34,7 @@ As well as meeting the basic CRUD functionality, the project required the follow
   </ul>
   
 ## App Overview
-To meet the CRUD functionality, I have created an application which allows the user to meet the criteria.
+To meet the CRUD functionality, I have created an application which allows the user to meet the criteria in the following ways:  
   
 ### Create
 A user can create an account for themselves, as well as create any songs, and playlists.  
