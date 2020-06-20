@@ -87,15 +87,17 @@ After registering, a user will be redirected to the login page where they can no
 
 After logging in, a user is redirected to the songs page, where they can create and delete songs. This is necessary as songs have to be created before being able to create a playlist.  
 
-![Diagram showing CI Pipeline](https://theredshift.org/index.php/s/RuUlnfIyyJ7FkOY/download) 
+![Diagram showing songs page](https://theredshift.org/index.php/s/8eWl5F9nDFfWgMK/download)
 
 After creating songs, a user can visit the playlists page. This will allow them to select their created songs from the dropdown box and select a title for their playlist. This will then create their playlist.  
 
-![Diagram showing CI Pipeline](https://theredshift.org/index.php/s/RuUlnfIyyJ7FkOY/download) 
+![Diagram showing create playlist page](https://theredshift.org/index.php/s/HYpwcZCp9TFFtvF/download)
 
 After creating a playlist, the user will be redirected to the home page. Here, they will be able to view their created playlists as well as the songs within them, and see options to update or delete their playlists.  
 
 After clicking the update button, a user will be able to select different songs from within the dropdown box to change the contents of their playlist.  
+
+![Diagram showing home page with playlists on it](https://theredshift.org/index.php/s/EQJfnc3KahB0Fc3/download)
 
 From the home page, if a user clicks "delete playlist", their playlist will be deleted from the database.  
 
