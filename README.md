@@ -48,7 +48,9 @@ A user is able to update their playlists, and change the songs within them. They
 ### Delete
 A user is able to delete both their playlists and songs. They can also delete their account which will delete any playlists and songs created by them.
 
-## Kanban Board - Trello
+## Kanban Board - Trello  
+
+A Kanban Board was used to keep track of my Project. A Trello board has been used to keep track of my progress. I initially created this with only the user stories, but developed on it to add testing as well as deployment objectives. The different labels specify the Minimum Viable Product (MVP) which allowed me to direct my focus. Other features are listed on here as "should have" - identifying future objectives I would like my application to have but have not yet been implemented. The listed User Stories are the basic functions the application should have to meet the CRUD specification, and the user's basic needs. 
 
 ## Database Structure (ERD)
 ### First ERD  
@@ -72,12 +74,31 @@ The application is run using Gunicorn, which assigns workers which divide the CP
 ## Application Front-End Design  
 Here I have included some screenshots displaying the different pages of the application. Although the design is very simple, it is functional.
 
+The user begins on the home page, where there are several options for different pages listed at the top. This is also where their created playlists would be listed.  
+
+The register page allows a user to register an account to access the other features of the application.  
+
+After registering, a user will be redirected to the login page where they can now log in.  
+
+After logging in, a user is redirected to the songs page, where they can create and delete songs. This is necessary as songs have to be created before being able to create a playlist.  
+
+After creating songs, a user can visit the playlists page. This will allow them to select their created songs from the dropdown box and select a title for their playlist. This will then create their playlist.  
+
+After creating a playlist, the user will be redirected to the home page. Here, they will be able to view their created playlists as well as the songs within them, and see options to update or delete their playlists.  
+
+After clicking the update button, a user will be able to select different songs from within the dropdown box to change the contents of their playlist.  
+
+From the home page, if a user clicks "delete playlist", their playlist will be deleted from the database.  
+
+A user also has the option to delete their account. If they do this, all playlists created by them will also be deleted.  
+
 ## Current Issues
 Right now, there are some issues with the application. These are as follows:  
 <ul>
   <li>A user cannot delete a song if that song exists in a playlist.</li>
   <li>When trying to log in, if the information is incorrect, it does not notify the user, but instead just reloads the page.</li>
   <li>To create a playlist, there have to be a minimum of 3 songs. This means a playlist can have a miniumum of 3 songs instead of having 2 empty fields.</li>
+  <li>The home page displays all playlists, not just playlists belonging to that user. However, any user can delete all playlists, even if it doesn't belong to them.</li>
 </ul>
 
 ## Improvements
@@ -87,5 +108,6 @@ Outside of fixing the current issues, I would like to make improvements to the a
   <li>Allow a user to tag other users to recommend a playlist to them.</li>
   <li>Re-design the application to be much more visually appealing.</li>
   <li>Include more information about songs, potentially recommending playlists with similar music to their own.</li>
+  <li?Implement album art, and give the user to select an album cover to associate with their playlist.</li>
   
  
