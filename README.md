@@ -107,7 +107,10 @@ A user also has the option to delete their account. If they do this, all playlis
 
 Debugger mode was active throughout development to allow for dynamic testing.  
 
-Pytest was also used to run unit and integration tests. Unit tests are designed to 
+
+
+Pytest was also used to run unit and integration tests. Unit tests are designed to test a function. If the test result returns the expected result, the test passes. Jenkins also provides information on which tests have passed and failed through the console output.
+![Diagram that shows testing coverage](https://theredshift.org/index.php/s/RJhGiaW8TpKnQdJ/download)
 
 ## Current Issues
 Right now, there are some issues with the application. These are as follows:  
