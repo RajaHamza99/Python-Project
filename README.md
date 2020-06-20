@@ -59,10 +59,8 @@ This diagram is the initial entity relationship diagram I created to show the pl
 
 ### Final ERD
 However, I simplified the application and relationship. This was my final ERD displaying the actual relationship.  
-![Diagram that shows final, implemented ERD](https://theredshift.org/index.php/s/i6nLITYi5fgYk7u/download)  
+![Diagram that shows final, implemented ERD]()
 
-
-![Diagram that shows initial ERD](https://drive.google.com/file/d/1irgi0uoN4hOzYhS9CedWT0mf3NrbUTDY/view?usp=sharing)  
 
 ## CI Pipeline  
 Below is a diagram detailing the CI Pipeline with the services used to display how the project was created and executed. By using these systems, it vastly reduces time from development to deployment. After editing code, I can push my work to a GitHub repository. From this, a build trigger is executed on Jenkins via webhook, deploying the application to the VM on Google Cloud Platform. Jenkins automatically runs tests after every push to GitHub after which, if successful, deploys the application. The application is also created with debugger mode active, which allows for dynamic testing.  
@@ -112,6 +110,11 @@ Debugger mode was active throughout development to allow for dynamic testing.
 Pytest was also used to run unit and integration tests. Unit tests are designed to test a function. If the test result returns the expected result, the test passes. Jenkins also provides information on which tests have passed and failed through the console output.  
 ![Diagram that shows testing coverage](https://theredshift.org/index.php/s/RJhGiaW8TpKnQdJ/download)
 
+## Risk Assessment
+
+As part of the project brief, I carried out a risk assessment identifying the potential issues and risks associated with the project.  
+
+![Diagram displaying risk assessment table]()
 ## Current Issues
 Right now, there are some issues with the application. These are as follows:  
 <ul>
