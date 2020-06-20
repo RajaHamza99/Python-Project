@@ -73,7 +73,7 @@ def playlist():
             songs_id=form.content1.data,
             songs_id2=form.content2.data,
             songs_id3=form.content3.data,
-            author=current_user
+            user_id=current_user
         )
         db.session.add(new_playlist)
         db.session.commit()
