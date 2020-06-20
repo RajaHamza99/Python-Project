@@ -67,6 +67,13 @@ def account_delete():
 @login_required
 def playlist():
     form = PlaylistForm()
+    all_songs = Songs.query.all()
+    song_choices = []
+    for song in all_songs:
+        song_choices.append((song.id, song.title))
+    form.content1.choices=song_choices
+    form.content2.choices=song_choices
+    form.content3.choices=song_choices
     if form.validate_on_submit():
         new_playlist = Playlists(
             title=form.title.data,
@@ -78,13 +85,6 @@ def playlist():
         db.session.add(new_playlist)
         db.session.commit()
         return redirect(url_for('home'))
-    all_songs = Songs.query.all()
-    song_choices = []
-    for song in all_songs:
-        song_choices.append((song.id, song.title))
-    form.content1.choices=song_choices
-    form.content2.choices=song_choices
-    form.content3.choices=song_choices
     return render_template('playlist.html', title='Playlist', form=form)
 
 @app.route('/playlist/delete/<int:playlists_id>', methods=['GET', 'POST'])
