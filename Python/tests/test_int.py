@@ -17,7 +17,8 @@ test_admin_email = "admin@email.com"
 test_admin_password = "admin2020"
 test_name="test song"
 test_artist="test artist"
-
+song_name="test song"
+song_artist="test artist"
 
 
 class TestBase(LiveServerTestCase):
@@ -46,6 +47,20 @@ class TestBase(LiveServerTestCase):
     def test_server_is_up_and_running(self):
         response = urlopen("http://localhost:5000")
         self.assertEqual(response.code, 200)
+
+
+
+def logging_in(self):
+   response =  self.client.post(
+            '/login',
+            data=dict(
+                email = "admin@admin.com",
+                password = "admin2016",               
+                ),
+            follow_redirects=True
+            )
+   return response
+
 
 
 class TestRegistration(TestBase):
@@ -93,22 +108,34 @@ class TestLogin(TestBase):
 
         assert url_for('home') in self.driver.current_url
 
-
-class TestSongs(TestBase):
+"""class TestSong(TestBase):
     def test_song(self):
-        """
-        Test that a user can create a song
-        """
-
+        
         self.driver.find_element_by_xpath('/html/body/a[3]').click()
         time.sleep(5)
-        self.driver.find_element_by_xpath('//*[@id="song_name"]').send_keys(test_name)
-        self.driver.find_element_by_xpath('//*[@id="song_artist"]').send_keys(test_artist)
 
+        self.driver.find_element_by_xpath('//*[@id="song_name"]').send_keys(song_name)
+        self.driver.find_element_by_xpath('//*[@id="song_artist"]').send_keys(song_artist)
         self.driver.find_element_by_xpath('//*[@id="submit"]').click()
         time.sleep(5)
 
         assert url_for('songs') in self.driver.current_url
+"""
+"""class TestPlaylist(TestBase):
+    def test_playlist(self):
+        self.driver.find_element_by_xpath('/html/body/a[4]').click()
+        time.sleep(5)
+
+        self.driver.find_element_by_xpath('//*[@id="title"]').send_keys(test_playlist)
+        self.driver.find_element_by_xpath('//*[@id="content1"]').send_keys(test_song)
+        self.driver.find_element_by_xpath('//*[@id="content2"]').send_keys(test_song)
+        self.driver.find_element_by_xpath('//*[@id="content3"]').send_keys(test_song)
+
+        self.driver.find_element_by_xpath('//*[@id="submit"').click()
+        time.sleep(5)
+
+        assert url_for('home') in self.driver.current_url
+"""
 
 if __name__ == '__main__':
     unittest.main(port=5000)

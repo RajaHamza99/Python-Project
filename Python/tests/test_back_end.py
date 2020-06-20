@@ -37,10 +37,15 @@ class TestBase(TestCase):
         hashed_pw_2 = bcrypt.generate_password_hash('test2016')
         employee = Users(first_name="test", last_name="user", email="test@user.com", password=hashed_pw_2)
 
+        song = Songs(title = "test song", artist = "test artist")
+        
         # save users to database
         db.session.add(admin)
         db.session.add(employee)
+        db.session.add(song)
         db.session.commit()
+        
+
 
     def tearDown(self):
         """
@@ -54,17 +59,20 @@ class TestBase(TestCase):
 
 
 def logging_in(self):
-   response =  self.client.post(
-            '/login',
+    response =  self.client.post(
+          '/login',
             data=dict(
-                email = "admin@admin.com",
-                password = "admin2016",               
-                ),
+                   email = "admin@admin.com",
+                    password = "admin2016",               
+                    ),
             follow_redirects=True
-            )
-   return response
+             )
+    return response
 
-
+def logging_out(self):
+    response = self.client.get(
+            '/logout',)
+    return response
 
 class TestViews(TestBase):
 
@@ -96,19 +104,6 @@ class TestViews(TestBase):
         logging_in(self)
         self.assertEqual(self.client.get(url_for('account')).status_code, 200)
 
-    def test_playlist_delete_view(self):
-        response = self.client.post(
-            '/login',
-            data=dict(
-                email="admin@admin.com",
-                password="admin2016",
-                ),
-            follow_redirects=True
-            )
-        self.assertEqual(response.status_code, 200)
-    
-        response_two = self.client.get(url_for('playlist_delete', playlists_id=1), follow_redirects=True)
-        self.assertEqual(response_two.status_code, 200)
         
 class TestRegistration(TestBase):
 
@@ -117,6 +112,7 @@ class TestRegistration(TestBase):
         Test that when I register a new user, it redirects me to the login page
         """
         with self.client:
+            logging_out(self)
             response = self.client.post(
                     '/register',
                     data = dict(
@@ -138,6 +134,7 @@ class TestLogin(TestBase):
         test that logging in redirects me to the songs page
         """
         with self.client:
+            logging_out(self)
             response = self.client.post(
                     '/login',
                     data = dict(
@@ -151,6 +148,7 @@ class TestLogin(TestBase):
         self.assertIn(b'admin2016', response.data)
 
 class TestPlaylist(TestBase):
+
     def test_playlist(self):
         """
         Test that a user can create a playlist
@@ -161,18 +159,16 @@ class TestPlaylist(TestBase):
                     '/playlist',
                     data = dict(
                         title="test playlist",
-                        songs_id="test song 1",
-                        songs_id2="test songs 2",
-                        songs_id3="test songs 3",
-                        author="Test author",
+                        songs_id="test song",
+                        songs_id2="test song",
+                        songs_id3="test song",
                         ),
                     follow_redirects=True
                     )
-            return response
         self.assertIn(b'test playlist', response.data)
-        self.assertIn(b'test song 1', response.data)
-        self.assertIn(b'test songs 2', response.data)
-        self.assertIn(b'test songs 3', response.data)
+        self.assertIn(b'test song', response.data)
+        self.assertIn(b'test song', response.data)
+        self.assertIn(b'test song', response.data)
 
 
 
@@ -207,7 +203,6 @@ class TestPlaylist(TestBase):
                     follow_redirects=True
                     )
             self.assertEqual(response.status_code, 200)
-
             responsetwo = self.client.post(url_for('playlist', playlists_id=1), data=dict(title="test song", artist="test artist"))
             self.assertIn(b'test song', responsetwo.data)
 """
@@ -231,5 +226,3 @@ class TestUpdate(TestBase):
         self.assertIn(b'test', response.data)
         self.assertIn(b'test', response.data)
         self.assertIn(b'test@test.com', response.data)
-
-
