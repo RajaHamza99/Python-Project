@@ -49,7 +49,7 @@ A user is able to update their playlists, and change the songs within them. They
 A user is able to delete both their playlists and songs. They can also delete their account which will delete any playlists and songs created by them.
 
 ## Kanban Board - Trello  
-
+![Diagram of project tracking trello board](https://theredshift.org/index.php/s/TdoZHyzGzGx35rl/download)  
 A Kanban Board was used to keep track of my Project. A Trello board has been used to keep track of my progress. I initially created this with only the user stories, but developed on it to add testing as well as deployment objectives. The different labels specify the Minimum Viable Product (MVP) which allowed me to direct my focus. Other features are listed on here as "should have" - identifying future objectives I would like my application to have but have not yet been implemented. The listed User Stories are the basic functions the application should have to meet the CRUD specification, and the user's basic needs. 
 
 ## Database Structure (ERD)
@@ -69,20 +69,29 @@ Below is a diagram detailing the CI Pipeline with the services used to display h
 
 The entire process after a commit is handled by Jenkins, which can lead to some issues. For example, if any of the tests fail, the application will not be deployed. Instead, Jenkins outlines where the errors occurred in the console output. This is extremely helpful as it allows you to see where your testing or code failed, and allows for much easier fixes.  
 
-The application is run using Gunicorn, which assigns workers which divide the CPU resources of the VM. When a user connects to the server, a worker is assigned to that user allowing the application to run much faster.
+The application is run using Gunicorn, which assigns workers which divide the CPU resources of the VM. When a user connects to the server, a worker is assigned to that user allowing the application to run much faster.  
+![Diagram showing CI Pipeline](https://theredshift.org/index.php/s/Soq5a6Wu2UyFtkC/download) 
 
 ## Application Front-End Design  
 Here I have included some screenshots displaying the different pages of the application. Although the design is very simple, it is functional.
 
 The user begins on the home page, where there are several options for different pages listed at the top. This is also where their created playlists would be listed.  
 
+![Diagram showing CI Pipeline](https://theredshift.org/index.php/s/EQJfnc3KahB0Fc3/download) 
+
 The register page allows a user to register an account to access the other features of the application.  
 
 After registering, a user will be redirected to the login page where they can now log in.  
 
+![Diagram showing CI Pipeline](https://theredshift.org/index.php/s/gMVwtG60nRrV1uq/download) 
+
 After logging in, a user is redirected to the songs page, where they can create and delete songs. This is necessary as songs have to be created before being able to create a playlist.  
 
+![Diagram showing CI Pipeline](https://theredshift.org/index.php/s/RuUlnfIyyJ7FkOY/download) 
+
 After creating songs, a user can visit the playlists page. This will allow them to select their created songs from the dropdown box and select a title for their playlist. This will then create their playlist.  
+
+![Diagram showing CI Pipeline](https://theredshift.org/index.php/s/RuUlnfIyyJ7FkOY/download) 
 
 After creating a playlist, the user will be redirected to the home page. Here, they will be able to view their created playlists as well as the songs within them, and see options to update or delete their playlists.  
 
@@ -91,6 +100,12 @@ After clicking the update button, a user will be able to select different songs 
 From the home page, if a user clicks "delete playlist", their playlist will be deleted from the database.  
 
 A user also has the option to delete their account. If they do this, all playlists created by them will also be deleted.  
+
+## Testing  
+
+Debugger mode was active throughout development to allow for dynamic testing.  
+
+Pytest was also used to run unit and integration tests. Unit tests are designed to 
 
 ## Current Issues
 Right now, there are some issues with the application. These are as follows:  
