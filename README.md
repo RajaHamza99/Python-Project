@@ -48,6 +48,8 @@ A user is able to update their playlists, and change the songs within them. They
 ### Delete
 A user is able to delete both their playlists and songs. They can also delete their account which will delete any playlists and songs created by them.
 
+### Kanban Board - Trello
+
 ## Database Structure (ERD)
 ### First ERD  
 This diagram is the initial entity relationship diagram I created to show the planned structure of the database.
@@ -60,6 +62,12 @@ However, I simplified the application and relationship. This was my final ERD di
 
 ![Diagram that shows initial ERD](https://drive.google.com/file/d/1irgi0uoN4hOzYhS9CedWT0mf3NrbUTDY/view?usp=sharing)  
 
+### CI Pipeline  
+Below is a diagram detailing the CI Pipeline with the services used to display how the project was created and executed. By using these systems, it vastly reduces time from development to deployment. After editing code, I can push my work to a GitHub repository. From this, a build trigger is executed on Jenkins via webhook, deploying the application to the VM on Google Cloud Platform. Jenkins automatically runs tests after every push to GitHub after which, if successful, deploys the application. The application is also created with debugger mode active, which allows for dynamic testing.  
+
+The entire process after a commit is handled by Jenkins, which can lead to some issues. For example, if any of the tests fail, the application will not be deployed. Instead, Jenkins outlines where the errors occurred in the console output. This is extremely helpful as it allows you to see where your testing or code failed, and allows for much easier fixes.  
+
+The application is run using Gunicorn, which assigns workers which divide the CPU resources of the VM. When a user connects to the server, a worker is assigned to that user allowing the application to run much faster.
 
 ## Application Front-End Design  
 Here I have included some screenshots displaying the different pages of the application. Although the design is very simple, it is functional.
@@ -80,6 +88,4 @@ Outside of fixing the current issues, I would like to make improvements to the a
   <li>Re-design the application to be much more visually appealing.</li>
   <li>Include more information about songs, potentially recommending playlists with similar music to their own.</li>
   
-  
-  Jenkins Test Testing 
- 7
+ 
