@@ -128,9 +128,9 @@ class TestPlaylist(TestBase):
         time.sleep(5)
 
         self.driver.find_element_by_xpath('//*[@id="title"]').send_keys(test_playlist)
-        self.driver.find_element_by_xpath('//*[@id="content1"]').send_keys(test_song)
-        self.driver.find_element_by_xpath('//*[@id="content2"]').send_keys(test_song)
-        self.driver.find_element_by_xpath('//*[@id="content3"]').send_keys(test_song)
+        self.driver.find_element_by_xpath('//*[@id="content1"]').send_keys(song_name)
+        self.driver.find_element_by_xpath('//*[@id="content2"]').send_keys(song_name)
+        self.driver.find_element_by_xpath('//*[@id="content3"]').send_keys(song_name)
 
         self.driver.find_element_by_xpath('//*[@id="submit"').click()
         time.sleep(5)
