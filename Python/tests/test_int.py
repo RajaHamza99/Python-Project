@@ -121,7 +121,8 @@ class TestLogin(TestBase):
 
         assert url_for('songs') in self.driver.current_url
 """
-"""class TestPlaylist(TestBase):
+class TestPlaylist(TestBase):
+    logging_in(self)
     def test_playlist(self):
         self.driver.find_element_by_xpath('/html/body/a[4]').click()
         time.sleep(5)
@@ -135,7 +136,7 @@ class TestLogin(TestBase):
         time.sleep(5)
 
         assert url_for('home') in self.driver.current_url
-"""
+
 
 if __name__ == '__main__':
     unittest.main(port=5000)
