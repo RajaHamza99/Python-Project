@@ -123,14 +123,13 @@ To meet the 75% test coverage requirement, I used the command to view lines whic
 
 As part of the project brief, I carried out a risk assessment identifying the potential issues and risks associated with the project.  
 
-![Diagram displaying risk assessment table]()
+![Diagram displaying risk assessment table](https://imgur.com/J2vsW2E.jpg)
 ## Current Issues
 Right now, there are some issues with the application. These are as follows:  
 <ul>
   <li>A user cannot delete a song if that song exists in a playlist.</li>
   <li>When trying to log in, if the information is incorrect, it does not notify the user, but instead just reloads the page.</li>
-  <li>To create a playlist, there have to be a minimum of 3 songs. This means a playlist can have a miniumum of 3 songs instead of having 2 empty fields.</li>
-  <li>The home page displays all playlists, not just playlists belonging to that user. However, any user can delete all playlists, even if it doesn't belong to them.</li>
+  <li>To create a playlist, there have to be a minimum of 3 songs. This means a playlist has to have a minimum of 3 songs instead of having 2 empty fields.</li>
   <li>Deleting a user deletes their created playlists, but does not delete any songs they created.</li>
 </ul>
 
@@ -143,5 +142,3 @@ Outside of fixing the current issues, I would like to make improvements to the a
   <li>Include more information about songs, potentially recommending playlists with similar music to their own.</li>
   <li?Implement album art, and give the user to select an album cover to associate with their playlist.</li>
   
-  
-  jenkins test 13
