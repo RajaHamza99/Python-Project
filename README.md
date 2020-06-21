@@ -105,11 +105,12 @@ A user also has the option to delete their account. If they do this, all playlis
 
 Debugger mode was active throughout development to allow for dynamic testing.  
 
-## First Unit Test Coverage
+## First Unit Test Coverage  
 
+Pytest was also used to run unit and integration tests. Unit tests are designed to test a function. If the test result returns the expected result, the test passes. Jenkins also provides information on which tests have passed and failed through the console output. 
 
+My first unit test provided 50% coverage for my application. To meet the 75% test coverage requirement, I used the command to view lines which hadn't been tested. This allowed me to focus further testing on areas that hadn't already been tested.
 
-Pytest was also used to run unit and integration tests. Unit tests are designed to test a function. If the test result returns the expected result, the test passes. Jenkins also provides information on which tests have passed and failed through the console output.  
 ![Diagram that shows testing coverage](https://theredshift.org/index.php/s/RJhGiaW8TpKnQdJ/download)
 
 ## Risk Assessment
@@ -124,6 +125,7 @@ Right now, there are some issues with the application. These are as follows:
   <li>When trying to log in, if the information is incorrect, it does not notify the user, but instead just reloads the page.</li>
   <li>To create a playlist, there have to be a minimum of 3 songs. This means a playlist can have a miniumum of 3 songs instead of having 2 empty fields.</li>
   <li>The home page displays all playlists, not just playlists belonging to that user. However, any user can delete all playlists, even if it doesn't belong to them.</li>
+  <li>Deleting a user deletes their created playlists, but does not delete any songs they created.</li>
 </ul>
 
 ## Improvements
