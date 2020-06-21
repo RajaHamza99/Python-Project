@@ -59,7 +59,7 @@ This diagram is the initial entity relationship diagram I created to show the pl
 
 ### Final ERD
 However, I simplified the application and relationship. This was my final ERD displaying the actual relationship.  
-![Diagram that shows final, implemented ERD](<blockquote class="imgur-embed-pub" lang="en" data-id="a/RlsvCrz" data-context="false" ><a href="//imgur.com/a/RlsvCrz"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>)
+![Diagram that shows final, implemented ERD](
 
 
 ## CI Pipeline  
@@ -110,7 +110,7 @@ Debugger mode was active throughout development to allow for dynamic testing.
 Pytest was also used to run unit and integration tests. Unit tests are designed to test a function. If the test result returns the expected result, the test passes. Jenkins also provides information on which tests have passed and failed through the console output. 
 
 My first unit test provided 50% coverage for my application. To meet the 75% test coverage requirement, I used the command to view lines which hadn't been tested. This allowed me to focus further testing on areas that hadn't already been tested.
-![Diagram of first unit test coverage]()
+![Diagram of first unit test coverage](https://imgur.com/J2vsW2E)
 
 ![Diagram that shows testing coverage](https://theredshift.org/index.php/s/RJhGiaW8TpKnQdJ/download)
 
