@@ -49,7 +49,7 @@ A user is able to update their playlists, and change the songs within them. They
 A user is able to delete both their playlists and songs. They can also delete their account which will delete any playlists and songs created by them.
 
 ## Kanban Board - Trello  
-![Diagram of project tracking trello board](https://theredshift.org/index.php/s/TdoZHyzGzGx35rl/download)  
+![Diagram of project tracking trello board](https://imgur.com/undefined.jpg)  
 A Kanban Board was used to keep track of my Project. A Trello board has been used to keep track of my progress. I initially created this with only the user stories, but developed on it to add testing as well as deployment objectives. The different labels specify the Minimum Viable Product (MVP) which allowed me to direct my focus. Other features are listed on here as "should have" - identifying future objectives I would like my application to have but have not yet been implemented. The listed User Stories are the basic functions the application should have to meet the CRUD specification, and the user's basic needs. 
 
 ## Database Structure (ERD)
