@@ -47,7 +47,7 @@ A user is able to view their created songs, as well as view any created playlist
 A user is able to update their playlists, and change the songs within them. They are also able to update their account details.  
 
 ### Delete
-A user is able to delete both their playlists and songs. They can also delete their account which will delete any playlists and songs created by them.
+A user is able to delete both their playlists and songs. They can also delete their account which will delete any playlists created by them.  
 
 ## Kanban Board - Trello  
 ![Diagram of project tracking trello board](https://imgur.com/fRxQOD5.jpg)
@@ -106,7 +106,7 @@ A user also has the option to delete their account. If they do this, all playlis
 
 Debugger mode was active throughout development to allow for dynamic testing.  
 
-## First Unit Test Coverage  
+### First Unit Test Coverage  
 
 Pytest was also used to run unit and integration tests. Unit tests are designed to test a function. If the test result returns the expected result, the test passes. Jenkins also provides information on which tests have passed and failed through the console output. 
 
@@ -116,6 +116,8 @@ My first unit test provided 50% coverage for my application.
 To meet the 75% test coverage requirement, I used the command to view lines which hadn't been tested. This allowed me to focus further testing on areas that hadn't already been tested.
 
 ![Diagram showing lines covered by unit tests](https://imgur.com/kLG3HWN.jpg)
+
+### Final Unit Test Coverage
 
 ![Diagram that shows testing coverage](https://theredshift.org/index.php/s/RJhGiaW8TpKnQdJ/download)
 
