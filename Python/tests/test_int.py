@@ -62,7 +62,7 @@ class TestRegistration(TestBase):
         self.driver.find_element_by_xpath("/html/body/a[4]").click()
         time.sleep(5)
         # Fill in registration form
-        self.driver.find_element_by_xpath('//*[@id="email"]').send_keys(test_admin_email)
+        self.driver.find_element_by_xpath('//*[@id="email"]').send_keys("test@address.com")
         self.driver.find_element_by_xpath('//*[@id="first_name"]').send_keys(
             test_admin_first_name)
         self.driver.find_element_by_xpath('//*[@id="last_name"]').send_keys(
