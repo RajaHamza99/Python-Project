@@ -59,13 +59,13 @@ This diagram is the initial entity relationship diagram I created to show the pl
 
 ### Final ERD
 However, I simplified the application and relationship. This was my final ERD displaying the actual relationship.  
-![Diagram that shows final, implemented ERD](
+![Diagram that shows final, implemented ERD](https://imgur.com/pfHP0W6.jpg)
 
 
 ## CI Pipeline  
 Below is a diagram detailing the CI Pipeline with the services used to display how the project was created and executed. By using these systems, it vastly reduces time from development to deployment. After editing code, I can push my work to a GitHub repository. From this, a build trigger is executed on Jenkins via webhook, deploying the application to the VM on Google Cloud Platform. Jenkins automatically runs tests after every push to GitHub after which, if successful, deploys the application. The application is also created with debugger mode active, which allows for dynamic testing.  
 
-The entire process after a commit is handled by Jenkins, which can lead to some issues. For example, if any of the tests fail, the application will not be deployed. Instead, Jenkins outlines where the errors occurred in the console output. This is extremely helpful as it allows you to see where your testing or code failed, and allows for much easier fixes.  
+The entire process after a commit is handled by Jenkins, which fully automates testing and deployment. After a commit to GitHub, webhooks are triggered which run the tests and then deploy the application. If any tests fail, Jenkins outlines where the errors occurred in the console output. This is extremely helpful as it allows you to see where your testing or code failed, and allows for much easier fixes.  
 
 The application is run using Gunicorn, which assigns workers which divide the CPU resources of the VM. When a user connects to the server, a worker is assigned to that user allowing the application to run much faster.  
 ![Diagram showing CI Pipeline](https://theredshift.org/index.php/s/Soq5a6Wu2UyFtkC/download) 
@@ -109,8 +109,12 @@ Debugger mode was active throughout development to allow for dynamic testing.
 
 Pytest was also used to run unit and integration tests. Unit tests are designed to test a function. If the test result returns the expected result, the test passes. Jenkins also provides information on which tests have passed and failed through the console output. 
 
-My first unit test provided 50% coverage for my application. To meet the 75% test coverage requirement, I used the command to view lines which hadn't been tested. This allowed me to focus further testing on areas that hadn't already been tested.
+My first unit test provided 50% coverage for my application. 
 ![Diagram of first unit test coverage](https://imgur.com/VTQeGX0.jpg)
+
+To meet the 75% test coverage requirement, I used the command to view lines which hadn't been tested. This allowed me to focus further testing on areas that hadn't already been tested.
+
+![Diagram showing lines covered by unit tests](https://imgur.com/kLG3HWN.jpg)
 
 ![Diagram that shows testing coverage](https://theredshift.org/index.php/s/RJhGiaW8TpKnQdJ/download)
 
