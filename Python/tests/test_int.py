@@ -45,8 +45,7 @@ class TestBase(LiveServerTestCase):
         db.session.commit()
     def tearDown(self):
         self.driver.quit()
-        print("--------------------------END-OF-TEST----------------------------------------------\n\n\n------------------
--------UNIT-AND-SELENIUM-TESTS----------------------------------------------")
+
     def test_server_is_up_and_running(self):
         response = urlopen("http://localhost:5000")
         self.assertEqual(response.code, 200)
