@@ -49,6 +49,7 @@ class TestBase(LiveServerTestCase):
     def test_server_is_up_and_running(self):
         response = urlopen("http://localhost:5000")
         self.assertEqual(response.code, 200)
+        time.sleep(5)
               
 class TestRegistration(TestBase):
     def test_registration(self):
