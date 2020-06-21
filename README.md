@@ -110,6 +110,7 @@ Debugger mode was active throughout development to allow for dynamic testing.
 Pytest was also used to run unit and integration tests. Unit tests are designed to test a function. If the test result returns the expected result, the test passes. Jenkins also provides information on which tests have passed and failed through the console output. 
 
 My first unit test provided 50% coverage for my application. To meet the 75% test coverage requirement, I used the command to view lines which hadn't been tested. This allowed me to focus further testing on areas that hadn't already been tested.
+![Diagram of first unit test coverage](ReadMe images/first unit test coverage.PNG)
 
 ![Diagram that shows testing coverage](https://theredshift.org/index.php/s/RJhGiaW8TpKnQdJ/download)
 
