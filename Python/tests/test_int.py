@@ -122,8 +122,8 @@ class TestLogin(TestBase):
         assert url_for('songs') in self.driver.current_url
 """
 class TestPlaylist(TestBase):
-    logging_in()
     def test_playlist(self):
+        logging_in(self)
         self.driver.find_element_by_xpath('/html/body/a[4]').click()
         time.sleep(5)
 
