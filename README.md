@@ -59,7 +59,7 @@ This diagram is the initial entity relationship diagram I created to show the pl
 
 ### Final ERD
 However, I simplified the application and relationship. This was my final ERD displaying the actual relationship.  
-![Diagram that shows final, implemented ERD](https://imgur.com/BuqLRkh)
+![Diagram that shows final, implemented ERD](https://imgur.com/SnFHiBq)
 
 
 ## CI Pipeline  
