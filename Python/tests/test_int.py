@@ -54,8 +54,8 @@ def logging_in(self):
    response =  self.client.post(
             '/login',
             data=dict(
-                email = "admin@admin.com",
-                password = "admin2016",               
+                email = "admin@email.com",
+                password = "admin2020",               
                 ),
             follow_redirects=True
             )
@@ -122,7 +122,7 @@ class TestLogin(TestBase):
         assert url_for('songs') in self.driver.current_url
 """
 class TestPlaylist(TestBase):
-    logging_in(self)
+    logging_in()
     def test_playlist(self):
         self.driver.find_element_by_xpath('/html/body/a[4]').click()
         time.sleep(5)
